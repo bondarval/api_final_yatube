@@ -20,7 +20,7 @@ class PostViewSet(viewsets.ModelViewSet):
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly,
         ReadOrAuthorOnly
-        ]
+    ]
     authentication_classes = (JWTAuthentication,)
     pagination_class = LimitOffsetPagination
 
@@ -47,7 +47,7 @@ class CommentViewSet(viewsets.ModelViewSet):
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly,
         ReadOrAuthorOnly
-        ]
+    ]
     authentication_classes = (JWTAuthentication,)
 
     def get_queryset(self):
