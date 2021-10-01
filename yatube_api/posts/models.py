@@ -12,7 +12,7 @@ class Group(models.Model):
     description = models.TextField()
 
     class Meta:
-        ordering = ['title']
+        ordering = ('title',)
 
     def __str__(self):
         return self.title
@@ -36,7 +36,7 @@ class Post(models.Model):
     )
 
     class Meta:
-        ordering = ['pub_date']
+        ordering = ('pub_date',)
 
     def __str__(self):
         return f'{self.author} {self.group} {self.text[:15]} {self.pub_date}'
@@ -53,7 +53,7 @@ class Comment(models.Model):
         'Дата добавления', auto_now_add=True, db_index=True)
 
     class Meta:
-        ordering = ['created']
+        ordering = ('created',)
 
     def __str__(self):
         return self.text[:15]
@@ -83,4 +83,4 @@ class Follow(models.Model):
                 name='self_following'
             )
         ]
-        ordering = ['user']
+        ordering = ('user', 'following')

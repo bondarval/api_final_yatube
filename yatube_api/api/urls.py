@@ -3,7 +3,12 @@ from rest_framework.routers import DefaultRouter
 
 from .views import CommentViewSet, FollowViewSet, GroupViewSet, PostViewSet
 
-router = DefaultRouter()
+
+class APIRouterV1(DefaultRouter):
+    pass
+
+
+router = APIRouterV1(DefaultRouter)
 
 router.register(r'posts', PostViewSet, basename='posts')
 router.register(r'groups', GroupViewSet, basename='groups')
