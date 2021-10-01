@@ -7,4 +7,4 @@ class AuthorOrReadOnly(permissions.BasePermission):
         return (
             request.action in (permissions.SAFE_METHODS, 'retrieve')
             or obj.author == view.user
-            )
+               )
