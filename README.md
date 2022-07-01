@@ -10,22 +10,43 @@
  - JWT Djoser 2.1.0
 ### Установка
 - Установить и активировать виртуальное окружение
+```bash
+python -m venv venv
+source venv/Scripts/activate
+```
 - Установить зависимости из файла requirements.txt
-```
+```bash
 pip install -r requirements.txt
-``` 
-- В папке с файлом manage.py выполнить команду:
 ```
+- Выполнить миграции:
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+- Собрать статику:
+```bash
+python manage.py collectstatic
+```
+- Запустить сервер разработчика:
+```bash
 python manage.py runserver
 ```
 ### Примеры API-запросов
  - Запрос на создание поста:
+```
 POST http://127.0.0.1:8000/api/v1/posts/ {
   "text": "string",
   "image": "string",
   "group": 0
 }
- - Запрос на получение поста по id: GET http://127.0.0.1:8000/api/v1/posts/{id}/
- - Запрос на получение информации о конкретном сообществе: GET http://127.0.0.1:8000/api/v1/groups/{id}/
+```
+ - Запрос на получение поста по id:
+ ```
+ GET http://127.0.0.1:8000/api/v1/posts/{id}/
+ ```
+ - Запрос на получение информации о конкретном сообществе:
+ ```
+ GET http://127.0.0.1:8000/api/v1/groups/{id}/
+ ```
 ### Автор
 Валерий А. Бондарь
